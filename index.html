@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KeyLogger</title>
     <style>
-          body{
-            background-image: url("keyloggerimg.jpeg");
-            background-position: top;
+          html{
+            background-image: url("keyloggerImg.jpeg");
             background-size: cover;
-
+            background-position: top;
         }
         .container{
             display: flex;
@@ -38,6 +37,9 @@
 .button-container{
     display: flex;
 }
+.text{
+    color: white;
+}
 button{
     font-size: 20px;
     padding: 10px 20px;
@@ -47,8 +49,8 @@ button{
 </head>
 <body>
     <div class="container">
-    <h1 class="head" style="border:2px solid black ;width:200px;text-align: center;padding: 2px;">KeyLogger</h1>
-    <p>Don't Forget To Subscribe to Our Channel</p>
+    <h1 class="head" style="border:2px solid black ;width:200px;text-align: center;padding: 2px; background-color: white;">KeyLogger</h1>
+    <p class="text">Let's play with the Keys</p>
     <div class="button-container">
         <button id="start-btn">Start Logging Keypresses</button>
     <button id="stop-btn">Stop Logging Keypresses</button>
