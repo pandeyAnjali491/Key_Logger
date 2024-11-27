@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyLogger</title>
+    <style>
+          body{
+            background-image: url("keyloggerimg.jpeg");
+            background-position: top;
+            background-size: cover;
+
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+
+        }
+#log,#state{
+    width: 500px;
+    height: 50px;
+    border:1px solid black;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    
+}
+#log{
+    background-color: orange;
+}
+#state{
+    background-color: grey;
+}
+.button-container{
+    display: flex;
+}
+button{
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 20px;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+    <h1 class="head" style="border:2px solid black ;width:200px;text-align: center;padding: 2px;">KeyLogger</h1>
+    <p>Don't Forget To Subscribe to Our Channel</p>
+    <div class="button-container">
+        <button id="start-btn">Start Logging Keypresses</button>
+    <button id="stop-btn">Stop Logging Keypresses</button>
+</div>
+    <div class="button-container">
+        <div id="log"></div>
+        <div id="state"></div>
+    </div>
+</div>
+
+<script>
+    // const  container=document.querySelector(".container");
+    // const  head=document.querySelector(".head");
+    const  startbtn=document.querySelector("#start-btn");
+    const  stopbtn=document.querySelector("#stop-btn");
+    const  log=document.querySelector("#log");
+const  state=document.querySelector("#state");
+
+startbtn.addEventListener('click',()=>{
+document.addEventListener("keydown",handleDown);
+document.addEventListener("keyup",handleup);
+//off button feature
+startbtn.disabled=true;
+stopbtn.disabled=false
+});
+
+stopbtn.addEventListener('click',()=>{
+document.removeEventListener("keydown",handleDown);
+document.removeEventListener("keyup",handleup);
+//blank showing on stop button
+log.textContent= "";
+state.textContent= "";
+//off button feature
+startbtn.disabled=false;
+stopbtn.disabled=true;
+});
+//e is an argument containing the the information of key by keydown/up feature
+function handleDown(e){
+    log.textContent=`key   ${e.key}  pressed `;
+    state.textContent="key is down";
+}
+function handleup(e){
+    log.textContent=`key   ${e.key}  pressed `;
+    state.textContent="key is up";
+
+}
+
+
+</script>
+</body>
+</html>
