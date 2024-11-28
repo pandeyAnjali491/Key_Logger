@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KeyLogger</title>
     <style>
-          html{
+        html{
+            background-color: black;
+        }
+          body{
             background-image: url("keyloggerImg.jpeg");
             background-size: cover;
             background-position: top;
+            background-repeat: no-repeat;
+            padding: 100px;
+            background-attachment: fixed;
         }
+        @media only screen and (max-width:600px) {
+            body{
+            background-image: url("keyloggerImg.jpeg");
+            background-size: cover;
+            background-position: top;
+            padding-top: 50px;
+            margin-left: 8px;
+
+        }
+}
+   
         .container{
             display: flex;
             flex-direction: column;
@@ -37,6 +54,16 @@
 .button-container{
     display: flex;
 }
+   @media only screen and (max-width:1000px) {
+    .button-container{
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 300px;
+}
+   }
+
 .text{
     color: white;
 }
